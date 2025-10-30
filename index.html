@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operation Muskan Reloaded 💖</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 95%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .section {
+            display: none;
+            min-height: 100vh;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .section.active {
+            display: flex;
+        }
+
+        .main-title {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-weight: 300;
+        }
+
+        .glow {
+            background: linear-gradient(45deg, #FFD700, #FF69B4, #FF1493);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: glow 2s ease-in-out infinite alternate;
+        }
+
+        @keyframes glow {
+            0% { text-shadow: 0 0 10px #FF69B4; }
+            100% { text-shadow: 0 0 20px #FF1493, 0 0 30px #FF1493; }
+        }
+
+        .subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            color: #FFD700;
+        }
+
+        .prescription-pad {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            margin: 20px 0;
+        }
+
+        .nazar-container {
+            margin: 30px 0;
+        }
+
+        .evil-eye {
+            font-size: 5rem;
+            animation: rotate 3s linear infinite;
+            margin-bottom: 20px;
+            cursor: pointer;
+        }
+
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+
+        .nazar-text {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            max-width: 90%;
+            margin: 0 auto;
+        }
+
+        .treatment-cards {
+            display: flex;
+            flex-direction: column;
+            gap: 25px;
+            margin: 30px 0;
+            width: 100%;
+        }
+
+        .card {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 25px;
+            border-radius: 15px;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .card h3 {
+            color: #FFD700;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+
+        .follow-up {
+            margin-top: 15px;
+            font-style: italic;
+            background: rgba(255, 215, 0, 0.1);
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .teasing-line {
+            background: rgba(255, 105, 180, 0.2);
+            padding: 12px;
+            border-radius: 10px;
+            margin: 10px 0;
+            border: 1px dashed #FF69B4;
+        }
+
+        .next-btn {
+            background: linear-gradient(45deg, #FF69B4, #FF1493);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            cursor: pointer;
+            margin-top: 30px;
+        }
+
+        /* Final Section Special Styling */
+        #final {
+            background: linear-gradient(135deg, #000428 0%, #004e92 100%);
+            position: relative;
+        }
+
+        .final-message {
+            font-size: 1.8rem;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+
+        .muskan-name-final {
+            font-size: 4rem;
+            font-weight: bold;
+            background: linear-gradient(45deg, #FF69B4, #FF1493, #FF69B4);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 0 0 30px rgba(255, 105, 180, 0.5);
+            animation: nameGlow 2s ease-in-out infinite;
+            margin: 30px 0;
+        }
+
+        @keyframes nameGlow {
+            0%, 100% { 
+                filter: drop-shadow(0 0 20px #FF69B4);
+                transform: scale(1);
+            }
+            50% { 
+                filter: drop-shadow(0 0 40px #FF1493);
+                transform: scale(1.05);
+            }
+        }
+
+        .nikkah-promise-final {
+            background: rgba(255, 215, 0, 0.2);
+            padding: 30px;
+            border-radius: 20px;
+            border: 2px solid #FFD700;
+            margin: 30px 0;
+            animation: promiseGlow 3s ease-in-out infinite;
+        }
+
+        @keyframes promiseGlow {
+            0%, 100% { box-shadow: 0 0 20px rgba(255, 215, 0, 0.3); }
+            50% { box-shadow: 0 0 40px rgba(255, 215, 0, 0.6); }
+        }
+
+        .kiss-final {
+            font-size: 6rem;
+            animation: kissFloat 3s ease-in-out infinite;
+            margin: 20px 0;
+        }
+
+        @keyframes kissFloat {
+            0%, 100% { transform: translateY(0px) rotate(0deg); }
+            50% { transform: translateY(-15px) rotate(10deg); }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        /* Global kiss style used on final section */
+        .kiss {
+            position: fixed;
+            font-size: 8rem;
+            z-index: 3;
+            pointer-events: none;
+            left: 50%;
+            transform: translateX(-50%);
+            top: 50%;
+        }
+
+        @keyframes kissAnimation {
+            0% { transform: translateX(-50%) scale(0) rotate(-30deg); opacity: 0; top: 50%; }
+            50% { transform: translateX(-50%) scale(1.5) rotate(0deg); opacity: 1; top: 50%; }
+            100% { transform: translateX(-50%) scale(1) rotate(0deg); opacity: 1; top: 20%; }
+        }
+
+        .star {
+            position: absolute;
+            background: white;
+            border-radius: 50%;
+            animation: twinkle 3s infinite;
+        }
+
+        @keyframes twinkle {
+            0%, 100% { opacity: 0.2; }
+            50% { opacity: 1; }
+        }
+
+        .heart {
+            position: absolute;
+            font-size: 1.5rem;
+            animation: heartFloat 4s linear infinite;
+            opacity: 0;
+            z-index: 1;
+        }
+
+        @keyframes heartFloat {
+            0% { 
+                transform: translateY(100vh) rotate(0deg);
+                opacity: 1;
+            }
+            100% { 
+                transform: translateY(-100px) rotate(360deg);
+                opacity: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <audio id="backgroundMusic" autoplay loop>
+        <source src="/Khuda Jaane - Instrumental (From  Bachna Ae Haseeno ).mp3" type="audio/mpeg">
+    </audio>
+
+    <div class="container">
+        <!-- Section 1: Landing -->
+        <section id="landing" class="section active">
+            <h1 class="main-title">Welcome, My Love <span class="glow">Muskan</span></h1>
+            <p class="subtitle">Your Personal Healing Journey</p>
+            <div class="prescription-pad">
+                <p><strong>Medication:</strong> Kisses & Hugs</p>
+                <p><strong>Dosage:</strong> Every time you smile</p>
+                <p><strong>Prescribed by:</strong> Dr. Shayan</p>
+            </div>
+            <button class="next-btn" onclick="showSection('nazar')">Start Healing →</button>
+        </section>
+
+        <!-- Section 2: Nazar -->
+        <section id="nazar" class="section">
+            <div class="nazar-container">
+                <div class="evil-eye" onclick="breakNazar()">🧿</div>
+                <p class="nazar-text">"Lagta hai madam ji ko meri hi nazar lag gayi... kal woh photo dekh kar. Uff... kya photo thi madam ji..."</p>
+            </div>
+            <button class="next-btn" onclick="showSection('backPain')">Continue →</button>
+        </section>
+
+        <!-- Section 3: Back Pain -->
+        <section id="backPain" class="section">
+            <div class="treatment-cards">
+                <div class="card">
+                    <h3>💆‍♂️ Back Pain Treatment</h3>
+                    <p>"Kamar dard main dena chahtha tha, par aapke periods ne de diya. Soch raha tha... kamar ka dard bed main deta, kya maza aata? 😏"</p>
+                    <div class="follow-up">
+                        "Agar nikkah hua madam ji, aapka mere saath... bas kamar dard hoga. Main hamesha malish kar dunga. 🤲❤️"
+                    </div>
+                    <div class="teasing-line">
+                        "Massage rates: Free for wife, ₹1000 for girlfriend... ab soch lo kya karna hai 😈"
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn" onclick="showSection('emotional')">Continue →</button>
+        </section>
+
+        <!-- Section 4: Emotional -->
+        <section id="emotional" class="section">
+            <div class="treatment-cards">
+                <div class="card">
+                    <h3>💔 Emotional Healing</h3>
+                    <p>"Teri aankhon mein jo thakaan hai, woh mere liye sabse bara dard hai. Main woh thakaan hara dunga..."</p>
+                    <div class="teasing-line">
+                        "Thak gayi ho? Aaram karo... nikkah ke baad bhi itna hi romantic rahunga, promise! 🤞"
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn" onclick="showSection('nutrition')">Continue →</button>
+        </section>
+
+        <!-- Section 5: Nutrition -->
+        <section id="nutrition" class="section">
+            <div class="treatment-cards">
+                <div class="card">
+                    <h3>🍲 Love Nutrition</h3>
+                    <p>"Khaana kha lo meri jaan, warna spoon leke aa jaunga personally. 🥄❤️"</p>
+                    <div class="teasing-line">
+                        "Khana nahi khaya toh spoon leke aaunga... par nikkah ke baad toh feed bhi karunga 😘"
+                    </div>
+                </div>
+            </div>
+            <button class="next-btn" onclick="showSection('final')">My Final Promise →</button>
+        </section>
+
+        <!-- Section 6: Final (Mast Wala) -->
+        <section id="final" class="section">
+            <!-- Stars background (created by createStars) -->
+            <div class="stars" id="stars"></div>
+
+            <!-- Kiss (uses the same id used by the snippet) -->
+            <div class="kiss" id="kiss">💋</div>
+
+            <div class="container">
+                <div class="final-message">
+                    "Shayan pagal ho gaya hai...<br>
+                    apke pyar mein. 💖"
+                </div>
+
+                <div class="muskan-name">Muskan</div>
+
+                <div class="nikkah-promise">
+                    <h3 class="promise-title">💍 My Nikkah Promise 💍</h3>
+                    <div class="promise-list">
+                        I promise to be your personal:<br>
+                        • Massage therapist 🤲<br>
+                        • Food feeder 🥄<br>  
+                        • Smile creator 😊<br>
+                        • Forever lover 💖<br><br>
+                        <strong>Insha'Allah ❤️</strong>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        // Section Navigation
+        function showSection(sectionId) {
+            document.querySelectorAll('.section').forEach(section => {
+                section.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Start music on first click
+            if(!window.musicStarted) {
+                window.musicStarted = true;
+                const audio = document.getElementById('backgroundMusic');
+                audio.volume = 0.3;
+                audio.play();
+            }
+
+            // If final section, create stars and hearts
+            if(sectionId === 'final') {
+                    createStars();
+                    createHearts();
+                    setInterval(createHearts, 2000);
+
+                    // Try to play background music for final (autoplay may be blocked)
+                    const audio = document.getElementById('backgroundMusic');
+                    if (audio) {
+                        audio.volume = 0.3;
+                        const p = audio.play();
+                        if (p && typeof p.then === 'function') p.catch(() => {});
+                    }
+
+                    // Trigger kiss animation and set up click retrigger
+                    const kissEl = document.getElementById('kiss');
+                    if (kissEl) {
+                        kissEl.style.animation = 'none';
+                        void kissEl.offsetWidth;
+                        kissEl.style.animation = 'kissAnimation 3s ease-in-out forwards';
+
+                        // Attach a safe click handler that retriggers the animation
+                        if (!kissEl.dataset.kissClickBound) {
+                            document.addEventListener('click', function kissClick() {
+                                kissEl.style.animation = 'none';
+                                void kissEl.offsetWidth;
+                                kissEl.style.animation = 'kissAnimation 3s ease-in-out forwards';
+                            });
+                            kissEl.dataset.kissClickBound = '1';
+                        }
+                    }
+            }
+        }
+
+        // Nazar Animation
+        function breakNazar() {
+            const evilEye = document.querySelector('.evil-eye');
+            evilEye.style.animation = 'rotate 0.3s linear 5 forwards';
+            
+            setTimeout(() => {
+                document.querySelector('.nazar-text').innerHTML = 
+                    '"But ab se, tum par meri nazar nahi...<br>sirf meri mohabbat hai. ❤️"';
+                evilEye.style.opacity = '0';
+            }, 1500);
+        }
+
+        // Create stars for final section
+        function createStars() {
+            const starsContainer = document.getElementById('stars');
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.className = 'star';
+                star.style.width = Math.random() * 3 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                starsContainer.appendChild(star);
+            }
+        }
+
+        // Create floating hearts
+        function createHearts() {
+            const container = document.body;
+            for (let i = 0; i < 10; i++) {
+                const heart = document.createElement('div');
+                heart.innerHTML = '💖';
+                heart.className = 'heart';
+                heart.style.left = Math.random() * 100 + 'vw';
+                heart.style.animationDelay = Math.random() * 4 + 's';
+                heart.style.fontSize = (Math.random() * 15 + 8) + 'px';
+                container.appendChild(heart);
+                
+                setTimeout(() => heart.remove(), 4000);
+            }
+        }
+
+        // Start with first section
+        document.addEventListener('DOMContentLoaded', function() {
+            showSection('landing');
+        });
+    </script>
+</body>
+</html>
